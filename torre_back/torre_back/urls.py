@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import opportunity
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('opportunity/',opportunity, name='opportunity'),
 ]
