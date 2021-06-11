@@ -8,8 +8,8 @@
                     
                         <div class="col-md-4" v-for="opportunity in opportunities" v-bind:key="opportunity.id"> 
                     
-                            <div class="card mb-3">
-                            <img class="card-img-top" v-bind:src="opportunity.picture" v-bind:alt="image">
+                            <div class="card mb-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+                            <img class="card-img-top img-hover-zoom " v-bind:src="opportunity.picture" v-bind:alt="image">
                             <div class="card-body">
                                 <h3 class="card-title mb-3">{{ opportunity.objective }}</h3>
                                 <p class="card-text"><strong>Type:</strong> {{ opportunity.type }}</p>
@@ -35,6 +35,7 @@
 <script>
 import axios from 'axios'
 export default{
+    name:'opportunities',
     data(){
         return{
             fields:[
@@ -92,5 +93,18 @@ export default{
 }
 </script>
 <style lang="css" scoped>
-
+.img-hover-zoom {
+    height: 300px;
+    overflow: hidden; 
+    background-size:cover;
+  }
+  
+.img-hover-zoom img {
+    transition: transform .5s ease;
+    background-size:cover;
+}
+.img-hover-zoom:hover img {
+    transform: scale(1.3);
+    background-size:cover;
+}
 </style>

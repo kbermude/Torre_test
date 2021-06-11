@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <router-view/>
+    <opportunities></opportunities>
   </div>
 </template>
 
 <script>
+import Opportunities from './components/Opportunity/Opportunities.vue'
 export default {
+  components: { Opportunities },
   name: 'App'
 }
 </script>
